@@ -14,4 +14,8 @@ jobs:
     - name: build
       run: mkdir build && git submodule add https://github.com/google/googletest 3rdparty && cd build && cmake .. && make -j
     - name: test
-      run: cd build/B && ../C/C && ../C/CTestExe && git submodule add https://github.com/akhtyamovpavel/ActionGtestReport test
+      uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+      with: 
+         exec-path: ../C/CTestExe
+         report-path: ../../report.xml
+         working-directory: ../build/B
