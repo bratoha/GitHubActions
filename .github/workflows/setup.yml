@@ -25,4 +25,4 @@ jobs:
       with: 
          exec-path: ../C/CTestExe
          report-path: ../../report.xml
-         working-directory: ../build/B
+         working-directory: ./build/B
