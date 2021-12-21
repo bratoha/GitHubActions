@@ -11,9 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: build
-      run: mkdir build && git submodule add https://github.com/google/googletest 3rdparty && cd build && cmake .. && make -j
-    - name: test
+    - name: Build
+      run: |
+        mkdir build
+        git submodule add https://github.com/google/googletest 3rdparty
+        cd build
+        cmake ..
+        make -j
+        cd B
+        ../C/C
+    - name: Test
       uses: akhtyamovpavel/ActionGtestReport@v0.0.9
       with: 
          exec-path: ../C/CTestExe
