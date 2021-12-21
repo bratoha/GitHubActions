@@ -13,3 +13,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: build
       run: mkdir build && git submodule add https://github.com/google/googletest 3rdparty && cd build && cmake .. && make -j
+    - name: test
+      run: cd build/B && ../C/C && ../C/CTestExe 
