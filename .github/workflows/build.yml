@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: make
-      run: make .
+    - name: build
+      run: mkdir build && mkdir 3rdparty && cd 3rdparty && git submodule add https://github.com/google/googletest && cd build && cmake .. && make -j
