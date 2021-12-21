@@ -19,6 +19,8 @@ jobs:
         cd build
         cmake ..
         make -j
+        cp -r B bin
+        cp -r C bin
         cd B
         ../C/C
     - name: Test
