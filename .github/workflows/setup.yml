@@ -10,7 +10,8 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository 
+      uses: actions/checkout@v2
     - name: Build
       run: |
         mkdir build
@@ -26,3 +27,12 @@ jobs:
          exec-path: ../C/CTestExe
          report-path: ./report/report.xml
          working-directory: ./build/B
+    - name: UploadArtifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Distributive
+        path: |
+          ./build/lib
+          ./build/bin
+         
+     
